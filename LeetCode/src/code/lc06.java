@@ -30,6 +30,7 @@ public class lc06 {
 		lc06 test = new lc06();
 		String str = test.convert("PAYPALISHIRING", 3);
 		System.out.println(str);
+		
 	}
 
 }
