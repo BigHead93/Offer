@@ -26,7 +26,6 @@ public class lc06 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		lc06 test = new lc06();
 		String str = test.convert("PAYPALISHIRING", 3);
 		System.out.println(str);

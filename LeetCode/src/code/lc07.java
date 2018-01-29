@@ -3,49 +3,27 @@ package code;
 public class lc07 {
 
 	public static void main(String[] args) {
-		System.out.println(reverse(-2147483412));
+		System.out.println(reverse(1056389759));
 	}
 
 	public static int reverse(int x) {
-		if (x == 0)
-			return 0;
 		int res = 0;
-		char[] positive = Integer.toString(Integer.MAX_VALUE).toCharArray();
-		char[] negative = Integer.toString(Integer.MIN_VALUE).toCharArray();
-		char[] nums = Integer.toString(x).toCharArray();
-		if (x > 0) {
-			if (nums.length == positive.length) {
-				for (int i = 0; i < positive.length; i++) {
-					if (positive[i] == nums[positive.length-i-1]){
-						continue;
-					}else if(positive[i] > nums[positive.length-i-1]){
-						break;
-					}else {
-						return 0;
-					}
-				}
-			}
-			for (int i = nums.length-1; i >= 0; i--) {
-				res = res * 10 + (nums[i] - '0');
-			}
-		}else {
-			if(nums.length == negative.length) {
-				for(int i = 1; i < negative.length; i++) {
-					if(negative[i] == nums[negative.length - i]) {
-						continue;
-					}else if(negative[i] > nums[negative.length - i]) {
-						break;
-					}else {
-						return 0;
-					}
-				}
-			}
-			for(int i = nums.length-1; i > 0; i--) {
-				res = res * 10 + (nums[i] - '0');
-			}
-			res *= -1;
+		int flag = x > 0 ? 1 : -1;
+		while (x > 9 || x < -9) {
+			res = res * 10 + x % 10;
+			x = x / 10;
+		}
+		if (flag > 0) {
+			if (Integer.MAX_VALUE / 10 >= res)
+				res = Integer.MAX_VALUE - 10 * res > x ? 10 * res + x : 0;
+			else
+				res = 0;
+		} else {
+			if (Integer.MIN_VALUE / 10 <= res)
+				res = Integer.MIN_VALUE - 10 * res > x ? 0 : 10 * res + x;
+			else
+				res = 0;
 		}
 		return res;
-
 	}
 }
