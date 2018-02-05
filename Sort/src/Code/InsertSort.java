@@ -22,7 +22,6 @@ public class InsertSort {
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] numbers = {33, 4, 2, 3, 67, 23};
 		insertSort(numbers);
 		for(int i : numbers)
