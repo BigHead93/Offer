@@ -1,13 +1,12 @@
 package code;
 
-import java.util.ArrayList;
 
 public class lc06 {
 	public String convert(String s, int numRows) {
 		if(s == null || s.length() <= numRows) return s;
 		StringBuilder res = new StringBuilder("");
 		StringBuilder[] strs = new StringBuilder[numRows];
-		for(StringBuilder str: strs) str = new StringBuilder("");
+		for(StringBuilder str: strs) { str = new StringBuilder("");}
 		int j = 1;
 		for(int i = 0; i < s.length(); i++) {
 			while(j < numRows-1) {
