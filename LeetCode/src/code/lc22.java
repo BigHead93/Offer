@@ -27,9 +27,9 @@ public class lc22 {
 	}
 
 	public static void main(String[] args) {
-		lc22 test = new lc22();
-		List<String> list = test.generateParenthesis(4);
-		for(String s : list)
-			System.out.println(s);
-	}
+//		lc22 test = new lc22();
+//		List<String> list = test.generateParenthesis(4);
+//		for(String s : list)
+//			System.out.println(s);
+}
 }
