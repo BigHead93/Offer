@@ -1,0 +1,13 @@
+lc01: twoSum: given int array and target, find two int added equals to target
+
+lc02: addTwoNumber: two Number in LinkedList format and reversed sequence, add them.
+
+lc03: lengthOfLongestSubstring: given string, find the longest substring without repeated character.
+
+lc04: indMedianSortedArrays: ****
+
+lc05: longestPalindrome: given string, find the longest palindrome(huiwen).
+
+lc06: 
+
+lc07: 
