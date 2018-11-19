@@ -36,7 +36,7 @@ public class lc01 {
 		}
 		return res;
 	}
-	
+
 //	method 3
 	public static int[] twoSum(int[] nums, int target) {
 		int[] res = new int[2];
@@ -55,9 +55,9 @@ public class lc01 {
 	
 	
 	public static void main(String args[]) {
-		int[] a = {3,4,2};
+		int[] a = {3, 4, 2};
 		int[] b = twoSum(a, 6);
-		for(int i : b)
+		for (int i : b)
 			System.out.print(i);
 	}
 }

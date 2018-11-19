@@ -1,7 +1,9 @@
 package code;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class lc03 {
 //	method 1
@@ -32,7 +34,7 @@ public class lc03 {
 	}
 	
 //	method 2
-	public static int lengthOfLongestSubstring(String s) {
+	public static int lengthOfLongestSubstring2(String s) {
 		if(s.length() == 0) return 0;
 		int max = 0;
 		Map<Character, Integer> ls = new HashMap<Character, Integer>();
@@ -44,6 +46,28 @@ public class lc03 {
 			max = Math.max(max, i-j+1);
 		}
 		return max;
+	}
+
+	public static int lengthOfLongestSubstring(String s) {
+		int result = 0;
+		Map<Character, Integer> set = new HashMap<>();
+		int head = 0;
+		for(int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if(!set.containsKey(c)) {
+				result = result >= set.size() ? result : set.size();
+				set.put(c, i);
+			} else {
+				result = result >= set.size() ? result : set.size();
+//				while(set.containsKey(c) && head < set.get(c)) {
+				while(head < set.get(c)) {
+					set.remove(s.charAt(head));
+					head++;
+				}
+				set.replace(c, i);
+			}
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {
