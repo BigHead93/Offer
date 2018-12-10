@@ -30,7 +30,7 @@ public class lc02 {
         return head.next;
     }
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
         ListNode tail = head;
         int sum, v1, v2;
@@ -46,6 +46,23 @@ public class lc02 {
             l2 = l2 == null ? null : l2.next;
         }
 
+        return head.next;
+    }
+
+    public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0);
+        ListNode tail = head;
+        int sum, v1, v2, pre=0;
+        while (l1 != null || l2 != null || pre != 0) {
+            v1 = l1 == null ? 0 : l1.val;
+            v2 = l2 == null ? 0 : l2.val;
+            sum = v1 + v2 + pre;
+            tail.next = new ListNode(sum % 10);
+            pre = sum / 10;
+            tail = tail.next;
+            l1 = l1 == null ? null : l1.next;
+            l2 = l2 == null ? null : l2.next;
+        }
         return head.next;
     }
 }
