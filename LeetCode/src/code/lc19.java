@@ -1,22 +1,30 @@
 package code;
+
+import java.util.Objects;
+
 public class lc19 {
+	/**
+	 * Given a linked list, remove the n-th node from the end of list and return its head.
+	 * Example:
+	 * Given linked list: 1->2->3->4->5, and n = 2.
+	 * After removing the second node from the end, the linked list becomes 1->2->3->5.
+	 * Note:
+	 * Given n will always be valid.
+	 */
 	public ListNode removeNthFromEnd(ListNode head, int n) {
-		if(head == null ) return null;
-		ListNode tail, nth;
-		int flag = 1;
-		tail = nth = head;
-		while(tail.next != null && flag < n) {
+		ListNode tail = head;
+		ListNode predel = new ListNode(0);
+		predel.next = head;
+		for(int i = 0; i < n - 1; i++) {
 			tail = tail.next;
-			flag++;
 		}
-		if(tail.next == null && flag < n) return null;
-		else if(tail.next == null && flag == n) { head = head.next; return head;}
-		tail = tail.next;
-		while(tail.next != null) {
+		while(tail.next != null ) {
 			tail = tail.next;
-			nth = nth.next;
+			predel = predel.next;
 		}
-		nth.next = nth.next.next;
+		if(predel.next == head)
+			return head.next;
+		predel.next = predel.next.next;
 		return head;
 	}
 
@@ -34,7 +42,9 @@ public class lc19 {
 //		System.out.println(b.next.val);
 //		System.out.println(b.next.next.val);
 //		System.out.println(b.next.next.next.val);
-		
+		String aa = "hello";
+		String bb = null;
+		System.out.println(aa.indexOf(Objects.requireNonNull(bb)));
 	}
 	
 }
