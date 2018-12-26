@@ -8,7 +8,7 @@ import java.util.List;
  * <p>
  * Recover the tree without changing its structure.
  */
-public class lc99 {
+public class lc99_RecoverBST {
     static List<TreeNode> nodes = new ArrayList<>(2);
 
     public void recoverTree(TreeNode root) {
@@ -23,9 +23,7 @@ public class lc99 {
         }
         int p1 = 0;
         int p2 = wrongNodes.size() == 2 ? 1 : 3;
-        wrongNodes.get(p1).val = wrongNodes.get(p1).val + wrongNodes.get(p2).val;
-        wrongNodes.get(p2).val = wrongNodes.get(p1).val - wrongNodes.get(p2).val;
-        wrongNodes.get(p1).val = wrongNodes.get(p1).val - wrongNodes.get(p2).val;
+        swap(wrongNodes.get(p1), wrongNodes.get(p2));
     }
 
     public void inOrder(TreeNode root) {
@@ -36,12 +34,18 @@ public class lc99 {
         inOrder(root.right);
     }
 
+    public void swap(TreeNode t1, TreeNode t2) {
+        int i = t1.val;
+        t1.val = t2.val;
+        t2.val = i;
+    }
+
     public static void main(String[] args) {
         TreeNode node0 = new TreeNode(3);
         node0.left = new TreeNode(1);
         node0.right = new TreeNode(4);
         node0.right.left = new TreeNode(2);
-        lc99 test = new lc99();
+        lc99_RecoverBST test = new lc99_RecoverBST();
         test.recoverTree(node0);
         System.out.println(nodes);
     }
