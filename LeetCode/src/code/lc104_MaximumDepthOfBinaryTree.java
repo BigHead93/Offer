@@ -1,5 +1,7 @@
 package code;
 
+import utils.TreeNode;
+
 /**
  * Given a binary tree, find its maximum depth.
  *
@@ -22,11 +24,11 @@ public class lc104_MaximumDepthOfBinaryTree {
 
     int maxDepth = 0;
     public int maxDepth(TreeNode root) {
-        findMaxinumDepth(root, maxDepth);
+        findMaximumDepth(root, maxDepth);
         return maxDepth;
     }
 
-    public void findMaxinumDepth(TreeNode root, int length) {
+    public void findMaximumDepth(TreeNode root, int length) {
         if(root == null)
             return;
         length++;
@@ -34,8 +36,8 @@ public class lc104_MaximumDepthOfBinaryTree {
             maxDepth = Math.max(maxDepth, length);
             return;
         }
-        findMaxinumDepth(root.left, length);
-        findMaxinumDepth(root.right, length);
+        findMaximumDepth(root.left, length);
+        findMaximumDepth(root.right, length);
     }
 }
 

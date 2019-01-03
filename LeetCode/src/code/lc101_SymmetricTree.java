@@ -1,5 +1,7 @@
 package code;
 
+import utils.TreeNode;
+
 public class lc101_SymmetricTree {
 
     public boolean isSymmetric(TreeNode root) {

@@ -1,5 +1,7 @@
 package code;
 
+import utils.TreeNode;
+
 /**
  * Given a binary tree, determine if it is height-balanced.
  *

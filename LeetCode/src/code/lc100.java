@@ -1,5 +1,7 @@
 package code;
 
+import utils.TreeNode;
+
 public class lc100 {
 
 	public static void main(String[] args) {
