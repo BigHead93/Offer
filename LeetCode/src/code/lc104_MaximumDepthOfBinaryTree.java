@@ -39,7 +39,10 @@ public class lc104_MaximumDepthOfBinaryTree {
     }
 }
 
-class Solution{
+/**
+ * 时间更长，但是代码更简洁
+ */
+class Solution2{
     public int maxDepth(TreeNode root) {
         if(root == null)
             return 0;
