@@ -1,4 +1,5 @@
 package code;
+import static utils.SwapUtils.swap;
 
 public class Sort2Colors {
 
@@ -23,9 +24,7 @@ public class Sort2Colors {
 			while(array[j] == 1)
 				j--;
 			if(i < j) {
-				array[i] = array[i] + array[j];
-				array[j] = array[i] - array[j];
-				array[i] = array[i] - array[j];
+				swap(array, i, j);
 			}
 		}
 	}

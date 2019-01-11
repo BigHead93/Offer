@@ -22,8 +22,6 @@ public class lc110_BalancedBinaryTree {
     public int depth(TreeNode root) {
         if(root == null)
             return 0;
-        if(root.left == null && root.right == null)
-            return 1;
         return Math.max(depth(root.left), depth(root.right)) +1;
     }
 }
