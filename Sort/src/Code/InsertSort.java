@@ -1,5 +1,8 @@
 package Code;
 
+/**
+ * 将一个记录插入到已经排好序的有序表中，得到一个新的，记录数增1的有序表
+ */
 public class InsertSort {
 
 	public static void insertSort(int[] numbers){

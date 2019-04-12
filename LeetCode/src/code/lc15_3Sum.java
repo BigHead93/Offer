@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class lc15 {
+public class lc15_3Sum {
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> results = new ArrayList<>();
 		Arrays.sort(nums);
@@ -17,7 +17,7 @@ public class lc15 {
 					if (nums[lo] + nums[hi] == sum) {
 						results.add(Arrays.asList(nums[i], nums[lo], nums[hi]));
 						while(lo < hi && nums[lo] == nums[lo+1]) lo++; //lo < hi, 保证lo++上不越界
-						while(lo < hi && nums[hi] == nums[hi-1]) hi--; //lo < hi, 保证hi--下不越界
+						while(lo < hi && nums[hi] == nums[hi-1]) hi--; //lo < hi, 保证hi--下不越界,如[0,0,0]
 						lo++;
 						hi--;
 					} else if (nums[lo] + nums[hi] < sum)

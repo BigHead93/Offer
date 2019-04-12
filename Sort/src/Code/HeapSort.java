@@ -11,7 +11,7 @@ public class HeapSort {
 		for(int i = numbers.length/2-1; i >= 0; i--){
 			heapAdjust(numbers, i, numbers.length-1); 
 		}
-		//依次把大的从后往前放，从小到大排序
+		//依次把大的往后放，从小到大排序
 		for(int i = numbers.length-1; i > 0; i--){
 			swap(numbers, 0, i);
 			heapAdjust(numbers, 0, i-1);

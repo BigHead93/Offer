@@ -1,6 +1,6 @@
 package Code;
 
-public class allSorts {
+public class allSimpleSorts {
 	public static void main(String[] args) {
 		int[] array = new int[]{2,1,4,6,3};
 //		bubbleSort(array);
