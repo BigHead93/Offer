@@ -34,7 +34,7 @@ public class LRUImpl<T> {
             map.put(obj, node);
         } else if (map.containsKey(obj)) {
             Node node = map.get(obj);
-            if (head.equals(node))
+            if (head == node)
                 return;
             else {
                 if (tail == node) {
