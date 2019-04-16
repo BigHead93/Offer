@@ -40,7 +40,7 @@ public class ThreeThreadPrintABC {
                         }
                     }
                     if(countStart < countEnd) {
-                        System.out.println(c);
+                        System.out.print(c);
                         countStart++;
                         monitor.notifyAll();
                     }
