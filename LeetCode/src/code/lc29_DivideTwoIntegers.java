@@ -24,12 +24,12 @@ public class lc29_DivideTwoIntegers {
             divide += divide;
         }
 
-        return negative ? -(divide + divideLong((dividend-sum), divisor)) : (divide + divideLong((dividend-sum), divisor));
-
+//        return negative ? -(divide + divideLong((dividend-sum), divisor)) : (divide + divideLong((dividend-sum), divisor));
+        return (divide + divideLong((dividend-sum), divisor)) * (negative ? -1 : 1);
     }
 
     /**
-     * LeetCode上超时，不能这样一次一次减，太慢
+     * LeetCode超时，不能这样一次一次减，太慢
      * @param dividend
      * @param divisor
      * @return

@@ -23,7 +23,6 @@ public class FindFirstExistOnlyOnceChar {
                 return i;
         }
         return -1;
-
     }
 
     public static void main(String[] args) {
@@ -32,4 +31,5 @@ public class FindFirstExistOnlyOnceChar {
         int i = test.find(str.toCharArray());
         System.out.println(str.charAt(i));
     }
+
 }

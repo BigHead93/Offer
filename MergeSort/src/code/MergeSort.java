@@ -34,6 +34,7 @@ public class MergeSort {
 		while(mid <= right){
 			temp[start++] = array[mid++];
 		}
+		//把排好的顺序赋回给array
 		while(tmp <= right){
 			array[tmp] = temp[tmp++];
 		}

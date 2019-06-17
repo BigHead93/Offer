@@ -1,5 +1,7 @@
 package code;
 
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,17 +15,6 @@ public class LRUImpl<T> {
 
     public LRUImpl(int maxLen) {
         this.maxLen = maxLen;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        Node tmp = head;
-        while (tmp != null) {
-            builder.append(tmp.toString());
-            tmp = tmp.next;
-        }
-        return builder.toString();
     }
 
     public void insert(T obj) {
@@ -89,20 +80,35 @@ public class LRUImpl<T> {
         }
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Node tmp = head;
+        while (tmp != null) {
+            builder.append(tmp.toString());
+            tmp = tmp.next;
+        }
+        return builder.toString();
+    }
+
     public static void main(String[] args) {
-        LRUImpl test = new LRUImpl(2);
-        test.insert('a');
-        System.out.println(test);
-        test.insert('b');
-        System.out.println(test);
-        test.insert('c');
-        System.out.println(test);
-        test.insert('d');
-        System.out.println(test);
-        test.insert('c');
-        System.out.println(test);
-        test.insert('b');
-        System.out.println(test);
+//        LRUImpl test = new LRUImpl(2);
+//        test.insert('a');
+//        System.out.println(test);
+//        test.insert('b');
+//        System.out.println(test);
+//        test.insert('c');
+//        System.out.println(test);
+//        test.insert('d');
+//        System.out.println(test);
+//        test.insert('c');
+//        System.out.println(test);
+//        test.insert('b');
+//        System.out.println(test);
+
+        ZonedDateTime now = ZonedDateTime.now();
+        System.out.println(now);
+        System.out.println(now.withZoneSameInstant(ZoneOffset.UTC));
     }
 
 }

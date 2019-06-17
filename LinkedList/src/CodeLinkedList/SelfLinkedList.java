@@ -6,15 +6,15 @@ import java.util.*;
  * @author I317032
  *
  */
-public class LinkedList implements List {
-	
+public class SelfLinkedList implements List {
+
 	private int size = 0;
 	private Node header = null;
-	
-	public LinkedList(){
+
+	public SelfLinkedList(){
 		this.header = new Node();
 	}
-	
+
 	@Override
 	public int size() {
 		// TODO Auto-generated method stub
@@ -36,7 +36,7 @@ public class LinkedList implements List {
 			last.setNext(newNode);
 		}
 	}
-	
+
 	@Override
 	public void insert(int index, Object obj) throws Exception {
 		Node newNode = new Node(obj);
@@ -60,12 +60,12 @@ public class LinkedList implements List {
 			throw new Exception("索引有误");
 		}
 		Node tem = new Node();
-		tem = header; 
+		tem = header;
 		int count = 0;
 		while(count != index){
 			tem = tem.getNext();
 			count++;
-			
+
 		}
 		return tem;
 	}
